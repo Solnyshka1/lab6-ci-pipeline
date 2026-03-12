@@ -1,2 +1,11 @@
-def is_even(n): return n % 2 == 0
-def is_positive(n): return n > 0
+"""Utility functions."""
+
+
+def is_even(n):
+    """Check if number is even."""
+    return n % 2 == 0
+
+
+def is_positive(n):
+    """Check if number is positive."""
+    return n > 0
