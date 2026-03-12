@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Linting Tools
-        run: pip install flake8 black
+        run: pip install flake8 black --break-system-packages
       - name: Run Flake8
         run: flake8 src/ tests/ --max-line-length=88
       - name: Check Formatting
@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
-        run: pip install pytest pytest-cov
+        run: pip install -r requirements.txt --break-system-packages
       - name: Run Tests with Coverage
-        run: pytest tests/ -v --cov=src
+        run: pytest tests/ -v --cov=src --cov-report=term-missing
